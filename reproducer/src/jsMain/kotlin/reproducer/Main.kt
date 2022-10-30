@@ -35,8 +35,8 @@ fun main() {
                 store.openCursor()
                     .collect { cursor ->
                         console.log("1: cursor.value = ${JSON.stringify(cursor.value, null, "  ")}")
-                        console.log("2: delete()")
-                        cursor.delete()
+                        console.log("2: store.get()")
+                        store.get(Key("other"))
                         console.log("3: cursor.value = ${JSON.stringify(cursor.value, null, "  ")}")
                         console.log("4: store.get()")
                         store.get(Key("other"))
@@ -44,6 +44,9 @@ fun main() {
                         console.log("6: store.get()")
                         store.get(Key("other"))
                         console.log("7: cursor.value = ${JSON.stringify(cursor.value, null, "  ")}")
+                        console.log("8: delete()")
+                        cursor.delete()
+                        console.log("9: cursor.value = ${JSON.stringify(cursor.value, null, "  ")}")
                     }
             }
         }
